@@ -5,6 +5,29 @@ import dynamic from "next/dynamic";
 
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
+const series2 = [10, 55, 10, 25]
+const options2 = {
+  series: [10, 55, 10, 25],
+  labels: ['CM-1002', 'CM-2002', 'CM-1015', 'CSP-10SEED'],
+  plotOptions: {
+    pie: {
+      expandOnClick: true,
+      donut: {
+        labels: {
+          show: true,
+          total: {
+            show: true,
+            showAlways: true,
+            fontSize: "24px",
+            color: "#gray"
+          }
+        }
+      }
+    }
+  },
+  
+}
+
 const options = {
   Chart: {
     toolbar: {
@@ -16,42 +39,42 @@ const options = {
     foreColor: theme.colors.gray[500],
   },
   grid: {
-      show: false,
+    show: false,
   },
   dataLabels: {
-      enabled: false,
+    enabled: false,
   },
   tooltip: {
-      enabled: false,
+    enabled: false,
   },
   xaxis: {
-      type: 'datetime',
-      axisBorder: {
-          color: theme.colors.gray[600]
-      },
-      axisTicks: {
-        color: theme.colors.gray[600]
-      },
-      categories: [
-          '2022-01-25T00:00:00Z',
-          '2022-01-26T00:00:00Z',
-          '2022-01-27T00:00:00Z',
-          '2022-01-28T00:00:00Z',
-          '2022-01-29T00:00:00Z',
-          '2022-01-30T00:00:00Z',
-          '2022-01-31T00:00:00Z',
-          '2022-02-01T00:00:00Z',
-      ],
+    type: "datetime",
+    axisBorder: {
+      color: theme.colors.gray[600],
+    },
+    axisTicks: {
+      color: theme.colors.gray[600],
+    },
+    categories: [
+      "2022-01-25T00:00:00Z",
+      "2022-01-26T00:00:00Z",
+      "2022-01-27T00:00:00Z",
+      "2022-01-28T00:00:00Z",
+      "2022-01-29T00:00:00Z",
+      "2022-01-30T00:00:00Z",
+      "2022-01-31T00:00:00Z",
+      "2022-02-01T00:00:00Z",
+    ],
   },
-  fill:{
-      opacity: 0.3,
-      type: 'gradient',
-      gradient: {
-          shade: 'dark',
-          opacityFrom: 0.7,
-          opacityTo: 0.3
-      }
-  }
+  fill: {
+    opacity: 0.3,
+    type: "gradient",
+    gradient: {
+      shade: "dark",
+      opacityFrom: 0.7,
+      opacityTo: 0.3,
+    },
+  },
 };
 
 const series = [{ name: "series1", data: [31, 120, 10, 28, 61, 18, 109] }];
@@ -61,27 +84,77 @@ export default function Dashboard() {
     <Flex direction="column" h="100vh">
       <Header />
 
-      <Flex w="100%" my="6" maxWidth={1480} mx="auto" px="6">
+      <Flex w="100%" my="6" maxWidth={2480} mx="auto" px="6">
         <Sidebar />
 
-        <SimpleGrid flex="1" gap="4" minChildWidth="320px" align="flex-start">
-          <Box
-            p="8"
-            bg="gray.800"
-            borderRadius={8}
-            pb="4"
-          >
+        <SimpleGrid flex="1" gap="4" minChildWidth="520px" align="flex-start">
+          <Box p="8" bg="gray.800" borderRadius={8} pb="4">
             <Text fontSize="lg" mb="4">
               Inscrito da Semana
             </Text>
             <Chart options={options} series={series} type="area" height={160} />
           </Box>
-          <Box
-            p="8"
-            bg="gray.800"
-            borderRadius={8}
-            pb="4"
-          >
+          <Box p="8" bg="gray.800" borderRadius={8} pb="4">
+            <Text fontSize="lg" mb="4" >
+              Taxa de Abertura
+            </Text>
+            <Chart options={options} series={series} type="area" height={160} />
+          </Box>
+          <Box p="8" bg="white" color="gray.800" borderRadius={8} pb="4">
+            <Text fontSize="lg" mb="4">
+              Taxa de Abertura
+            </Text>
+            <Chart options={options2} series={series2} type="donut" height={160} />
+          </Box>
+          <Box p="8" bg="white" color="gray.800" borderRadius={8} pb="4">
+            <Text fontSize="lg" mb="4">
+              Taxa de Abertura
+            </Text>
+            <Chart options={options} series={series} type="area" height={160} />
+          </Box>
+          <Box p="8" bg="gray.800" borderRadius={8} pb="4">
+            <Text fontSize="lg" mb="4">
+              Taxa de Abertura
+            </Text>
+            <Chart options={options} series={series} type="area" height={160} />
+          </Box>{" "}
+          <Box p="8" bg="gray.800" borderRadius={8} pb="4">
+            <Text fontSize="lg" mb="4">
+              Taxa de Abertura
+            </Text>
+            <Chart options={options} series={series} type="area" height={160} />
+          </Box>
+          <Box p="8" bg="gray.800" borderRadius={8} pb="4">
+            <Text fontSize="lg" mb="4">
+              Taxa de Abertura
+            </Text>
+            <Chart options={options} series={series} type="area" height={160} />
+          </Box>
+          <Box p="8" bg="gray.800" borderRadius={8} pb="4">
+            <Text fontSize="lg" mb="4">
+              Taxa de Abertura
+            </Text>
+            <Chart options={options} series={series} type="area" height={160} />
+          </Box>
+          <Box p="8" bg="gray.800" borderRadius={8} pb="4">
+            <Text fontSize="lg" mb="4">
+              Taxa de Abertura
+            </Text>
+            <Chart options={options} series={series} type="area" height={160} />
+          </Box>
+          <Box p="8" bg="gray.800" borderRadius={8} pb="4">
+            <Text fontSize="lg" mb="4">
+              Taxa de Abertura
+            </Text>
+            <Chart options={options} series={series} type="area" height={160} />
+          </Box>{" "}
+          <Box p="8" bg="gray.800" borderRadius={8} pb="4">
+            <Text fontSize="lg" mb="4">
+              Taxa de Abertura
+            </Text>
+            <Chart options={options} series={series} type="area" height={160} />
+          </Box>{" "}
+          <Box p="8" bg="gray.800" borderRadius={8} pb="4">
             <Text fontSize="lg" mb="4">
               Taxa de Abertura
             </Text>
